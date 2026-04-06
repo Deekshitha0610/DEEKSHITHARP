@@ -1,0 +1,26 @@
+import java.util.*;
+public class MAIN {
+public static void main(String[]args) {
+	Student st1 = new Student("DIYA",111,"ECE");
+	Student st2 = new Student("DEEKSHITHA",222,"ECE");
+	Student st3 = new Student("MOKSHIT",333,"ECE");
+	ArrayList<Student> list = new ArrayList<>();
+	list.add(st1);
+	list.add(st2);
+	list.add(st3);
+	System.out.print(list);
+}
+}
+class Student{
+	String name;
+	int roll;
+	String dpt;
+	Student(String name,int roll,String dpt){
+	this.name = name;
+	this.roll = roll;
+	this.dpt = dpt;
+	}
+public String toString() {
+	return "  STUDENT NAME: "+ name+" STUDENT ROLLNO: "+ roll +" STUDENT DEPT: "+ dpt;
+	
+}}
