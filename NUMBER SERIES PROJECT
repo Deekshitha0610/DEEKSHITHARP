@@ -1,0 +1,65 @@
+import java.util.*;
+
+public class NUMBER_SYSTEM {
+
+    // Fibonacci
+    static void fibonacci(int n) {
+        int a = 0, b = 1;
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+
+    // Even numbers
+    static void even(int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.print((2 * i) + " ");
+        }
+    }
+
+    // Odd numbers
+    static void odd(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print((2 * i + 1) + " ");
+        }
+    }
+
+    // Square numbers
+    static void square(int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.print((i * i) + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Tell Me What type of Method do u want to perform");
+        System.out.println("1. Fibonacci");
+        System.out.println("2. Even");
+        System.out.println("3. Odd");
+        System.out.println("4. Square");
+
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+
+        System.out.print("Enter number of terms: ");
+        int n = sc.nextInt();
+
+        System.out.print("Output: ");
+
+        switch (choice) {
+            case 1: fibonacci(n); break;
+            case 2: even(n); break;
+            case 3: odd(n); break;
+            case 4: square(n); break;
+            default: System.out.println("Invalid choice");
+        }
+
+        sc.close();
+    }
+}
