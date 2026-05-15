@@ -1,0 +1,43 @@
+package application;
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+public class loginpage extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Labels
+        Label title = new Label("Login");
+        Label userLabel = new Label("Username:");
+        TextField username = new TextField();
+        Label passLabel = new Label("Password:");
+        PasswordField password = new PasswordField();
+        Label message = new Label();
+        // Button
+        Button loginBtn = new Button("Login");
+        loginBtn.setOnAction(e -> {
+            String user = username.getText();
+            String pass = password.getText();
+            if (user.equals("admin") && pass.equals("1234")) {
+                message.setText("Login Successful!");
+            } else {
+                message.setText("Invalid Credentials");
+            }
+        });
+        // Layout
+        VBox root = new VBox(10);
+        root.setAlignment(Pos.CENTER);
+        root.getChildren().addAll(title, userLabel, username, passLabel, password, loginBtn, message);
+        // Scene
+        Scene scene = new Scene(root, 300, 300);
+        primaryStage.setTitle("Login");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
